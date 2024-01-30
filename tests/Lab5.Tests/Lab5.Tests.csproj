@@ -2,13 +2,14 @@
 
     <PropertyGroup>
         <RootNamespace>Itmo.ObjectOrientedProgramming.Lab5.Tests</RootNamespace>
-        <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <IsPackable>false</IsPackable>
         <IsTestProject>true</IsTestProject>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="Microsoft.NET.Test.Sdk"/>
+        <PackageReference Include="Moq" />
         <PackageReference Include="xunit"/>
         <PackageReference Include="xunit.runner.visualstudio">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -18,6 +19,24 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Lab5.Application.Abstractions">
+        <HintPath>..\..\src\Lab5\ConsoleTerminal\bin\Debug\net7.0\Lab5.Application.Abstractions.dll</HintPath>
+      </Reference>
+      <Reference Include="Lab5.Application.Contracts">
+        <HintPath>..\..\src\Lab5\ConsoleTerminal\bin\Debug\net7.0\Lab5.Application.Contracts.dll</HintPath>
+      </Reference>
+      <Reference Include="Lab5.Application.Models">
+        <HintPath>..\..\src\Lab5\ConsoleTerminal\bin\Debug\net7.0\Lab5.Application.Models.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\Lab5\Application\Lab5.Application.Abstractions\Lab5.Application.Abstractions.csproj" />
+      <ProjectReference Include="..\..\src\Lab5\Application\Lab5.Application\Lab5.Application.csproj" />
+      <ProjectReference Include="..\..\src\Lab5\Infrastructure\Lab5.Infrastructure.DataAccess\Lab5.Infrastructure.DataAccess.csproj" />
     </ItemGroup>
 
 </Project>
